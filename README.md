@@ -126,3 +126,7 @@ git clone https://github.com/zaxlct/vue-sku
 npm install
 npm run serve
 ```
+
+## 提问
+- 有问题可发起 issues，或加 QQ 群： 163801325
+- 有想法亦可发起 PR
