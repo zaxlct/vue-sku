@@ -1,3 +1,5 @@
+// 源自 https://github.com/zent-contrib/sku/blob/master/src/utils/index.js
+
 // 计算每个sku后面有多少项
 export function getLevels(tree) {
   let level = []
