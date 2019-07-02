@@ -2,6 +2,7 @@
 用 element-ui 实现了 zent 的 SKU 规格选择器组件
 
 ## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
+注意：本项目只是 DEMO 提供参考，并未打包成 npm package
 ![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-161359@2x.jpg)
 
 ## 参考实现
