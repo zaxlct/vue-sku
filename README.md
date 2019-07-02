@@ -1,5 +1,8 @@
 # vue-sku
-用 element-ui 实现了 zent 的 SKU 规格选择器组件
+- 用 element-ui 实现了 zent 的 SKU 规格选择器组件
+- 后台编辑 SKU
+- 为每一种 SKU 设置额外的属性，如价格、库存等
+- 前端展示 SKU，缺货时 disabled
 
 ## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
 注意：本项目只是 DEMO 提供参考，并未打包成 npm package
