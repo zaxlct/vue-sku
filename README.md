@@ -6,7 +6,7 @@
 
 ## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
 注意：本项目只是 DEMO 提供参考，并未打包成 npm package
-![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-182535@2x.jpg)
+![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-215359@2x.jpg)
 
 ## 参考实现
 - [zent-sku](https://github.com/zent-contrib/sku)
@@ -129,6 +129,9 @@ git clone https://github.com/zaxlct/vue-sku
 npm install
 npm run serve
 ```
+
+## TODO
+- 库存为零时，选择 sku 的按钮 disabled
 
 ## 提问
 - 有问题可发起 issues，或加 QQ 群： 163801325
