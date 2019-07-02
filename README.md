@@ -10,7 +10,6 @@
 
 ## 参考实现
 - [zent-sku](https://github.com/zent-contrib/sku)
-- [vue-sku-component](https://github.com/wojianishanghaojiugoujia/vue-sku-component)
 - [rossroma/vue-sku](https://github.com/rossroma/vue-sku)
 
 ## 文档
