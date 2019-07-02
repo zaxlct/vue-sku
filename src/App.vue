@@ -168,28 +168,6 @@ export default {
           },
         ],
       },
-      {
-        id: 3,
-        value: '运营商',
-        leaf: [
-          {
-            id: 31,
-            value: '移动',
-          },
-          {
-            id: 32,
-            value: '联通',
-          },
-          {
-            id: 33,
-            value: '电信',
-          },
-          {
-            id: 34,
-            value: '全网通',
-          },
-        ],
-      },
     ]
   }),
 
