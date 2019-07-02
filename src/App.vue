@@ -119,7 +119,7 @@
 import VueJsonPretty from 'vue-json-pretty'
 import SkuSelect from './components/sku-select'
 import SkuTable from './components/sku-table'
-import { createUniqueString } from './utils'
+import { createUniqueString, uniqueArr } from './utils'
 
 export default {
   components: {
@@ -226,7 +226,7 @@ export default {
                     .split(/\s+/) // 使用空格分割成数组
                     .filter(value => !oldArr.some(option => option.value === value)) // 过滤掉 oldArr 已存在的 value
                     .map(value => ({ id: createUniqueString() + '_id', value })) // 把 value 转成对象，id 设置为 null
-      this.specification[index].leaf = [...oldArr, ...arr]
+      this.specification[index].leaf = uniqueArr([...oldArr, ...arr])
       this.$set(this.addValues, index, '')
     },
 
