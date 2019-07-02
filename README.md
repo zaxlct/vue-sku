@@ -26,9 +26,7 @@
 | options | 可配置参数 | object | `{}` | `optionValue: 'id', optionText: 'value'` |
 
 ```javascript
-import { SKU } from 'zent'
-
-const { flatten } = SKU
+import { flatten } from 'src/utils/sku'
 
 let skus = [
   { id: 1, value: '颜色', leaf: [{id: 11, value: '红色'}, {id: 12, value: '蓝色'}] },
@@ -73,9 +71,7 @@ console.log(flatten(skus, items))
 
 #### isSame
 ```javascript
-import { SKU } from 'zent'
-
-const { isSame } = SKU
+import { isSame } from 'src/utils/sku'
 
 let skuA = [
   { id: 1, value: '颜色', leaf: [{id: 11, value: '红色'}, {id: 12, value: '蓝色'}] },
