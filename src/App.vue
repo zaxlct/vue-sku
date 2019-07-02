@@ -108,11 +108,11 @@
       el-button(type='info' :disabled='disabled' @click='addSpec') 添加规格项目
 
   .sku_container
-    SkuSelect(:skusData="specification")
+    SkuSelect(:skusData="specificationFilter")
 
   .sku_container
-    SkuTable(:skusData="specification")
-    vue-json-pretty(:data="specification")
+    SkuTable(:skusData="specificationFilter")
+    vue-json-pretty(:data="specificationFilter")
 </template>
 
 <script>
@@ -196,6 +196,11 @@ export default {
   computed: {
     disabled() {
       return this.specification.length > 3 || this.specification.some(item => !item.value)
+    },
+
+    // 过滤掉属性名和属性值为空的数据规格项目
+    specificationFilter() {
+      return this.specification.filter(item => item.value && item.leaf.length)
     },
   },
 
