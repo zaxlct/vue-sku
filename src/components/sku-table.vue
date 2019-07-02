@@ -52,13 +52,6 @@ export default {
   computed: {
     skusList() {
     /**
-     * [
-     *   { id: 1, text: '颜色', leaf: [{id: 11, text: '红色'}] },
-     *   { id: 2, text: '尺寸', leaf: [{id: 21, text: '大'}, {id: 22, text: '小'}] }
-     * ]
-     */
-
-    /**
      * output:
      * [
      *   {
@@ -78,9 +71,12 @@ export default {
     },
 
     columns() {
-      const specList = this.skusData.map((item, index) => ({
+      const specList = this.skusData.map(item => ({
         label: item.value,
-        formater: row => row.skus[index].v,
+        formater(row) {
+          const sku = row.skus.find(sku => sku.k === item.value)
+          return sku.v
+        },
       }))
       return [
         ...specList,
