@@ -21,6 +21,7 @@
   border-radius: 50%
 
 .sku_group
+  margin-bottom: 10px
   &:hover
     .spec_title .remove
       display: block
