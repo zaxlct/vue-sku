@@ -1,26 +1,35 @@
+<style lang="sass" scoped>
+.flex
+  display: flex
+
+  .guide_coefficient
+    margin-right: 20px
+</style>
+
 <template lang="pug">
 .container
-  el-form(:inline="true" :model="coefficient")
-    el-form-item(label="指导价倍数" prop="guide_coefficient")
-      el-input-number(
-        :step="0.1"
-        :min="1"
-        :precision="2"
-        v-model="coefficient.guide_coefficient"
-      )
-    el-form-item
-      el-button(type="primary" @click="setGuideCoefficient") 批量设置指导价倍数
+  .flex
+    el-form.guide_coefficient(:inline="true" :model="coefficient")
+      el-form-item(label="指导价倍数" prop="guide_coefficient")
+        el-input-number(
+          :step="0.1"
+          :min="1"
+          :precision="2"
+          v-model="coefficient.guide_coefficient"
+        )
+      el-form-item
+        el-button(type="primary" @click="setGuideCoefficient") 批量设置指导价倍数
 
-  el-form(:inline="true" :model="coefficient")
-    el-form-item(label="标价倍数" prop="purchase_coefficient")
-      el-input-number(
-        :step="0.1"
-        :min="1"
-        :precision="2"
-        v-model="coefficient.purchase_coefficient"
-      )
-    el-form-item
-      el-button(type="primary" @click="setPurchaseCoefficient") 批量设置标价倍数
+    el-form(:inline="true" :model="coefficient")
+      el-form-item(label="标价倍数" prop="purchase_coefficient")
+        el-input-number(
+          :step="0.1"
+          :min="1"
+          :precision="2"
+          v-model="coefficient.purchase_coefficient"
+        )
+      el-form-item
+        el-button(type="primary" @click="setPurchaseCoefficient") 批量设置标价倍数
 
   egrid(
     border

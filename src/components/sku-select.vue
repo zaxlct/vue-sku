@@ -1,6 +1,6 @@
 <style lang="sass" scoped>
 .container
-  line-height: 40px
+  line-height: 30px
 </style>
 
 <template lang="pug">
