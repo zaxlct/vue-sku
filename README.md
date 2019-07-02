@@ -10,7 +10,7 @@
 - [rossroma/vue-sku](https://github.com/rossroma/vue-sku)
 
 ## 文档
-> 直接引用的 zent sku [官方文档](https://youzan.github.io/zent/zh/component/sku)
+> Flatten、isSame 直接引用了 zent sku [官方文档](https://youzan.github.io/zent/zh/component/sku)
 #### Flatten
 `SKU.flatten(sku, items, options)`
 通过计算笛卡尔积，将树形的value变成扁平的数组
@@ -106,7 +106,7 @@ console.log(isSame(skuA, skuD))
  */
 ```
 
-#### Flatten、isSame 如何在 Python 里使用
+#### Flatten、isSame 函数如何在 Python 里使用
 1. 打开[源代码](https://gitee.com/zaxlct/number-squares/blob/dev/src/utils/sku/index.js)
 2. 源代码有三个函数 `getLevels flatten isEqual`，依次复制三个函数到 [ES6 转 ES5 网站](https://www.babeljs.cn/repl)（相当于 python3 转 python2）
 3. 注意，每个函数前的 `export` 语句要删除。即 `export function` => `function`
