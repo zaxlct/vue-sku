@@ -2,6 +2,7 @@
 - 用 element-ui 实现了 zent 的 SKU 规格选择器组件
 - 后台编辑 SKU
 - 为每一种 SKU 设置额外的属性，如价格、库存等
+- 支持单元格动态合并
 - 前端展示并选择 SKU
 
 ## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
