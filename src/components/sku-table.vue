@@ -39,7 +39,6 @@
     :data="data"
     :columns="columns"
     :columns-props="columnsProps"
-    :span-method="objectSpanMethod"
   )
 </template>
 
