@@ -39,6 +39,7 @@
     :data="data"
     :columns="columns"
     :columns-props="columnsProps"
+    :span-method="objectSpanMethod"
   )
 </template>
 
@@ -251,6 +252,10 @@ export default {
     },
 
     objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+      console.log(row)
+      // 前行row、当前列column、当前行号rowIndex、当前列号columnIndex
+      // row.skus.length 只有 sku 大于 1，才合并单元格
+      // columnIndex === 0  、columnIndex === 1 ，限制只有第一列和第二列才合并单元格
       if (row.skus.length > 1 && columnIndex === 0 || (row.skus.length > 2 && columnIndex === 1)) {
         if (rowIndex % 2 === 0) {
           return {
