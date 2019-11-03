@@ -39,7 +39,6 @@
     :data="data"
     :columns="columns"
     :columns-props="columnsProps"
-    :span-method="objectSpanMethod"
   )
 </template>
 
@@ -60,22 +59,28 @@ export default {
 
   computed: {
     skusList() {
-    /**
-     * output:
-     * [
-     *   {
-     *     ids: '1-11_2-21',
-     *     skus: [{"k_id":1,"k":"颜色","v_id":11,"v":"红色"},{"k_id":2,"k":"尺寸","v_id":21,"v":"大"}],
-     *   },
-     *   {
-     *     ids: '1-11_2-22',
-     *     skus: [{"k_id":1,"k":"颜色","v_id":11,"v":"红色"},{"k_id":2,"k":"尺寸","v_id":22,"v":"小"}],
-     *   }
-     * ]
-     */
+      /**
+       * output:
+       * [
+       *   {
+       *     ids: '1-11_2-21',
+       *     skus: [{"k_id":1,"k":"颜色","v_id":11,"v":"红色"},{"k_id":2,"k":"尺寸","v_id":21,"v":"大"}],
+       *   },
+       *   {
+       *     ids: '1-11_2-22',
+       *     skus: [{"k_id":1,"k":"颜色","v_id":11,"v":"红色"},{"k_id":2,"k":"尺寸","v_id":22,"v":"小"}],
+       *   }
+       * ]
+       */
       return flatten(this.skusData).map(item => ({
         skus: item.skus,
-        ids: item.skus.reduce((total, prev, index) => `${total}${prev.k_id}-${prev.v_id}${index === item.skus.length - 1 ? '' : '_'}`, '')
+        ids: item.skus.reduce(
+          (total, prev, index) =>
+            `${total}${prev.k_id}-${prev.v_id}${
+              index === item.skus.length - 1 ? '' : '_'
+            }`,
+          '',
+        ),
       }))
     },
 
@@ -95,7 +100,13 @@ export default {
           component: Vue.extend({
             props: ['row'],
             render() {
-              return <ElInput placeholder="请输入规格" value={this.row.format} oninput={e => this.row.format = e.trim()}></ElInput>
+              return (
+                <ElInput
+                  placeholder="请输入规格"
+                  value={this.row.format}
+                  oninput={e => (this.row.format = e.trim())}
+                ></ElInput>
+              )
             },
           }),
         },
@@ -105,16 +116,17 @@ export default {
           component: Vue.extend({
             props: ['row'],
             render() {
-              return <ElInputNumber
-                      placeholder="请输入厂家指导价"
-                      value={this.row.guide_price}
-                      step={1}
-                      min={0}
-                      controls={false}
-                      precision={0}
-                      oninput={e => this.row.guide_price = e}
-                    >
-                    </ElInputNumber>
+              return (
+                <ElInputNumber
+                  placeholder="请输入厂家指导价"
+                  value={this.row.guide_price}
+                  step={1}
+                  min={0}
+                  controls={false}
+                  precision={0}
+                  oninput={e => (this.row.guide_price = e)}
+                ></ElInputNumber>
+              )
             },
           }),
         },
@@ -124,16 +136,17 @@ export default {
           component: Vue.extend({
             props: ['row'],
             render() {
-              return <ElInputNumber
-                      placeholder="请输入进价"
-                      value={this.row.purchase_price}
-                      step={1}
-                      min={0}
-                      controls={false}
-                      precision={0}
-                      oninput={e => this.row.purchase_price = e}
-                    >
-                    </ElInputNumber>
+              return (
+                <ElInputNumber
+                  placeholder="请输入进价"
+                  value={this.row.purchase_price}
+                  step={1}
+                  min={0}
+                  controls={false}
+                  precision={0}
+                  oninput={e => (this.row.purchase_price = e)}
+                ></ElInputNumber>
+              )
             },
           }),
         },
@@ -143,21 +156,22 @@ export default {
           component: Vue.extend({
             props: ['row'],
             render() {
-              return <ElInputNumber
-                      placeholder="请输入标价"
-                      value={this.row.sell_price}
-                      step={1}
-                      min={0}
-                      controls={false}
-                      precision={0}
-                      oninput={e => this.row.sell_price = e}
-                    >
-                    </ElInputNumber>
+              return (
+                <ElInputNumber
+                  placeholder="请输入标价"
+                  value={this.row.sell_price}
+                  step={1}
+                  min={0}
+                  controls={false}
+                  precision={0}
+                  oninput={e => (this.row.sell_price = e)}
+                ></ElInputNumber>
+              )
             },
           }),
         },
       ]
-    }
+    },
   },
 
   watch: {
@@ -165,18 +179,19 @@ export default {
       deep: true,
       immediate: true,
       handler(newSkus, oldSkus) {
-        if (!newSkus.length) return this.data = []
+        if (!newSkus.length) return (this.data = [])
         if (!oldSkus || !oldSkus.length) return this.initData(newSkus)
         if (newSkus.length === oldSkus.length) {
           // 当规格名和规格值数量未发生变化，更新 skus 即可
-          return this.data = newSkus.map((item, index) => ({
+          return (this.data = newSkus.map((item, index) => ({
             ...this.data[index],
             ...item,
-          }))
+          })))
         }
 
         // 当规格名的数量发生了变化
-        if (newSkus[0].skus.length !== oldSkus[0].skus.length) return this.initData(newSkus)
+        if (newSkus[0].skus.length !== oldSkus[0].skus.length)
+          return this.initData(newSkus)
 
         const diffIds = this.diffIds(newSkus, oldSkus)
         if (newSkus.length > oldSkus.length) {
@@ -202,7 +217,7 @@ export default {
           this.data = this.data.filter(_item => !diffIds.includes(_item.ids))
         }
       },
-    }
+    },
   },
 
   data: () => ({
@@ -229,7 +244,7 @@ export default {
     columnsProps: {
       align: 'center',
       minWidth: 100,
-    }
+    },
   }),
 
   methods: {
@@ -249,26 +264,6 @@ export default {
         purchase_price: undefined,
         sell_price: undefined,
       }))
-    },
-
-    objectSpanMethod({ row, column, rowIndex, columnIndex }) {
-      console.log(row)
-      // 前行row、当前列column、当前行号rowIndex、当前列号columnIndex
-      // row.skus.length 只有 sku 大于 1，才合并单元格
-      // columnIndex === 0  、columnIndex === 1 ，限制只有第一列和第二列才合并单元格
-      if (row.skus.length > 1 && columnIndex === 0 || (row.skus.length > 2 && columnIndex === 1)) {
-        if (rowIndex % 2 === 0) {
-          return {
-            rowspan: 2,
-            colspan: 1
-          }
-        } else {
-          return {
-            rowspan: 0,
-            colspan: 0
-          }
-        }
-      }
     },
 
     setGuideCoefficient() {
