@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,6 +13,7 @@
     "egrid": "^1.1.2",
     "element-ui": "^2.10.0",
     "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
     "vue-json-pretty": "^1.6.0"
   },
   "devDependencies": {
