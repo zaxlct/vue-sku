@@ -10,6 +10,11 @@
 注意：本项目只是 DEMO 提供参考，并未打包成 npm package
 ![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-215359@2x.jpg)
 
+## 2019-11-03 更新内容
+
+- async 分支，实现了从请求 mock 数据，到获取当前的 sku 参数传递给后端的完整 demo
+- 删除了合并单元格功能
+
 ## 参考实现
 
 - [zent-sku](https://github.com/zent-contrib/sku)
