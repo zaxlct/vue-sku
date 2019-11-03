@@ -5,15 +5,15 @@
 - 为每一种 SKU 设置额外的属性，如价格、库存等
 - 前端展示并选择 SKU
 
-## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
-
-注意：本项目只是 DEMO 提供参考，并未打包成 npm package
-![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-215359@2x.jpg)
-
 ## 2019-11-03 更新内容
 
 - async 分支，实现了从请求 mock 数据，到获取当前的 sku 参数传递给后端的完整 demo
 - 删除了合并单元格功能
+
+## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
+
+注意：本项目只是 DEMO 提供参考，并未打包成 npm package
+![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-215359@2x.jpg)
 
 ## 参考实现
 
