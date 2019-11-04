@@ -5,7 +5,7 @@ import {
   creatIds
 } from './utils'
 
-export function param2Data(product_skus_data, product_materials) {
+export function param2Data(product_skus_data) {
   if (!product_skus_data || !product_skus_data.length) return
   let specificationObj = {}
 
@@ -59,12 +59,7 @@ export function param2Data(product_skus_data, product_materials) {
         }
       })
     }
-    // product_materials 有所有的物料，但不一定有所有 sku
-    // product_skus 有所有的 SKU
-    // 把 product_materials 分配到 product_skus 里（用物料是否相等来判断）
-    if (product_materials && product_materials.length) {
-      skusObj.product_materials = product_materials.filter(material => JSON.stringify(material.product_sku.product_sku) === JSON.stringify(item.product_sku))
-    }
+
     return {
       ...skusObj,
       ids: creatIds(skusObj.skus),
