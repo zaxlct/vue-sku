@@ -149,7 +149,7 @@ class EditSku extends Vue {
   }
 
   // 父组件调用，获取 sku-table 的数据
-  _getData(data) {
+  _getData() {
     return this.$refs.SkuTable.data
   }
 
