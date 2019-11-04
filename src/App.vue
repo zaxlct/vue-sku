@@ -47,7 +47,6 @@ export default {
         return {
           format,
           guide_price,
-          // 过滤掉报价单的 sku_id
           purchase_price,
           sell_price,
           product_sku: skus.map(sku => ({

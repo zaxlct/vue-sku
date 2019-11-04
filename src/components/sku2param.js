@@ -6,6 +6,7 @@ import {
 } from './utils'
 
 export function param2Data(product_skus_data) {
+  // product_skus_data 数据结构请参考 `/src/components/mock.js`
   if (!product_skus_data || !product_skus_data.length) return
   let specificationObj = {}
 
