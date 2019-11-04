@@ -231,7 +231,7 @@ class SkuTable extends Vue {
   }
 
   initData(skusList) {
-    if (this.productSkus) {
+    if (this.productSkus && this.productSkus.length) {
       // 初始化数据
       this.data = this.productSkus
       this.$emit('update:productSkus', [])
