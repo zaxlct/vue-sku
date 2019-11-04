@@ -2,6 +2,25 @@
 
 本分支实现了从请求 mock 数据，到获取当前的 sku 参数传递给后端的完整 demo
 
+## 查看 DEMO
+
+1. 克隆本项目
+
+```
+git clone https://github.com/zaxlct/vue-sku
+```
+
+2. 切换到 `async` 分支
+
+3. 安装依赖
+
+```
+npm i
+npm start
+```
+
+浏览器打开 `http://localhost:3000/`
+
 ## 常见问题
 
 ### 1. 后端返回的 sku 数据结构是什么？
