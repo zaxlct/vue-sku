@@ -240,7 +240,7 @@ export default {
 
     coefficient: {
       purchase_coefficient: 0,
-      guide_coefficient: 0,
+      guide_coefficient: 1.2,
     },
     columnsProps: {
       align: 'center',
@@ -261,7 +261,7 @@ export default {
         ...item,
         // 初始化属性
         format: '',
-        guide_price: undefined,
+        guide_price: 100, // 为了方便展示数据，这里默认设置为 100
         purchase_price: undefined,
         sell_price: undefined,
       }))
