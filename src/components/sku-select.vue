@@ -24,6 +24,7 @@
         :type="activeSku[index] && activeSku[index].option.id === option.id ? 'primary' : ''"
       ) {{option.value}}
 
+  //- egrid 是 el-table 的封装
   egrid(
     v-if="showSkuTable"
     border
