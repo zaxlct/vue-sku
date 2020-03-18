@@ -62,6 +62,7 @@ import { diffArary } from '../utils'
       }))
     },
 
+    // 这里是表格的列 el-table-column，用 template slot-scope="scope" 能实现同样的效果
     columns() {
       const specList = this.specification.map(item => ({
         label: item.value,

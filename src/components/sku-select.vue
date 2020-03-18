@@ -94,6 +94,7 @@ import { param2Data } from './sku2param'
       return []
     },
 
+    // 这里是表格的列 el-table-column，用 template slot-scope="scope" 能实现同样的效果
     columns() {
       if (
         this.sell_price_offer &&
