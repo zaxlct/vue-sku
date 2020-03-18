@@ -1,5 +1,6 @@
 <template lang="pug">
 .container
+  //- egrid 是 el-table 的封装
   egrid(
     border
     max-height="800"
