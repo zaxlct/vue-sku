@@ -31,6 +31,7 @@
       el-form-item
         el-button(type="primary" @click="setPurchaseCoefficient") 批量设置标价倍数
 
+  //- egrid 是 el-table 的封装
   egrid(
     border
     max-height="800"

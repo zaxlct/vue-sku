@@ -10,9 +10,9 @@
 - **[async 分支](https://github.com/zaxlct/vue-sku/tree/async)，实现了从模拟请求后端 mock 数据，到获取当前的 sku 参数传递给后端的完整 demo**
 - 删除了合并单元格功能
 
-## [在线 DEMO](https://zaxlct.github.io/vue-sku/)
+## [在线 DEMO](https://zaxlct.github.io/vue-sku/)（master 分支）
 
-注意：本项目只是 DEMO 提供参考，并未打包成 npm package
+注意：本项目只提供 DEMO 提供参考，并未打包成 npm package
 ![DEMO](http://furniture-resource.sutot.cn/Jietu20190702-215359@2x.jpg)
 
 ## 参考实现
